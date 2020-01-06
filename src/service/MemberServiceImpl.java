@@ -8,6 +8,13 @@ public class MemberServiceImpl implements MemberService {
 	
 	
     private static MemberServiceImpl singLeton = new MemberServiceImpl();
+    
+    private MemberServiceImpl() {};
+    
+    public static MemberServiceImpl getInstance() {
+    	return singLeton;
+    }
+    
 	@Override
 	public String greet(int i) {
 		String[] greetings = {"Good morning", "Hello", "Good evening"};

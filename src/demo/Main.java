@@ -1,14 +1,16 @@
 package demo;
 
-import java.lang.reflect.Member;
 import java.util.ArrayList;
 
+import entity.Member;
 import service.MemberServiceImpl;
+import service.SumServiceImpl;
 
 public class Main {
 
 	public static void main(String[] args) {
-		MemberServiceImpl service = new MemberServiceImpl();
+//		MemberServiceImpl service = new MemberServiceImpl();
+		MemberServiceImpl service = MemberServiceImpl.getInstance();
 		System.out.println(service.greet(2));
 		
 		System.out.println(service.getAll());
@@ -16,6 +18,10 @@ public class Main {
 		for(Member mem : list) {
 			System.out.println(mem.getId() + "," + mem.getName() + "," + mem.getEmail());
 		}
+		
+		SumServiceImpl sum = new SumServiceImpl();
+		System.out.println(sum.Sum(2, 5));
+		
 
 	}
 
